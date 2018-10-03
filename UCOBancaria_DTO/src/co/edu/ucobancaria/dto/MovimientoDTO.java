@@ -2,6 +2,9 @@ package co.edu.ucobancaria.dto;
 
 import java.util.Date;
 
+import static co.edu.ucobase.transversal.fecha.UtilFecha.obtenerUtilFecha;
+import static co.edu.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+
 public final class MovimientoDTO {
 
 	private int codigo;
@@ -42,7 +45,7 @@ public final class MovimientoDTO {
 	}
 
 	public final void setFecha(Date fecha) {
-		this.fecha = fecha;
+		this.fecha = obtenerUtilFecha().obtenerValorDefecto(fecha);
 	}
 
 	public final TipoMovimientoDTO getTipoMovimiento() {
@@ -74,7 +77,7 @@ public final class MovimientoDTO {
 	}
 
 	public final void setComentario(String comentario) {
-		Comentario = comentario;
+		Comentario = obtenerUtilTexto().aplicarTrim(comentario);
 	}
 	
 	

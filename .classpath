@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="UCOBancaria_API/src"/>
+	<classpathentry kind="src" path="UCOBancaria_Datos/src"/>
+	<classpathentry kind="src" path="UCOBancaria_Dominio/src"/>
+	<classpathentry kind="src" path="UCOBancaria_DTO/src"/>
+	<classpathentry kind="src" path="UCOBancaria_Negocio/src"/>
+	<classpathentry kind="src" path="UCOBase_Transversal/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,6 +1,8 @@
 package co.edu.ucobancaria.dto;
 
-import co.edu.ucobase.transversal.objeto.UtilObjeto;
+import static co.edu.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+
+
 
 /**
  * objeto de transferencia de datos que representa a un movimiento o de transaccion 
@@ -23,7 +25,7 @@ public final class TipoMovimientoDTO {
 		super();
 		setCodigo(codigo); 
 		setNombre(nombre); 
-		setSigno(nombre); 
+		setSigno(signo); 
 	}
 	public int getCodigo() {
 		return codigo;
@@ -35,7 +37,7 @@ public final class TipoMovimientoDTO {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
-		this.nombre = UtilObjeto.obtenerUtilObjeto().obtenerValorDefecto(nombre, "");
+		this.nombre = obtenerUtilTexto().aplicarTrim(nombre);
 	}
 	public String getSigno() {
 		return signo;

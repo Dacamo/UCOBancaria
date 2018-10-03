@@ -1,4 +1,5 @@
 package co.edu.ucobancaria.dto;
+import static co.edu.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
 
 /*
  * Objeto de transferencia de datos que representa 
@@ -37,7 +38,7 @@ public final class TipoCuentaDTO {
 
 
 	public final void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombre = obtenerUtilTexto().aplicarTrim(nombre);
 	}
 	
 	

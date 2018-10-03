@@ -33,7 +33,6 @@ public final class ClienteDTO {
 		return codigo;
 	}
 
-
 	public final void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
@@ -53,7 +52,7 @@ public final class ClienteDTO {
 	}
 
 	public final void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombre = obtenerUtilTexto().aplicarTrim(nombre);
 	}
 
 	public final String getCorreo() {
@@ -61,7 +60,7 @@ public final class ClienteDTO {
 	}
 
 	public final void setCorreo(String correo) {
-		this.correo = correo;
+		this.correo = obtenerUtilTexto().aplicarTrim(correo);
 	}
 
 	public final String getClave() {
@@ -69,7 +68,7 @@ public final class ClienteDTO {
 	}
 
 	public final void setClave(String clave) {
-		this.clave = clave;
+		this.clave = obtenerUtilTexto().aplicarTrim(clave);
 	}
 	
 	

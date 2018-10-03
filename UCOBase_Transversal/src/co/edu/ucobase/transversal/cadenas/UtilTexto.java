@@ -1,6 +1,5 @@
 package co.edu.ucobase.transversal.cadenas;
 
-
 import static co.edu.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
 
 public final class UtilTexto {
