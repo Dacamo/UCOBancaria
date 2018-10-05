@@ -20,7 +20,6 @@ public class UtilFecha {
 		T retorno= objeto;
 		if(objeto==null) {
 			retorno = (T) new Date();
-			System.out.println(retorno);
 		}
 		return retorno;
 	
