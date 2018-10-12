@@ -19,10 +19,14 @@ public final class UtilObjeto {
 	
 	public <T> T obtenerValorDefecto (T objeto, T valorDefecto) {
 		T retorno= objeto;
-		if(objeto==null) {
+		if(objetoEsNulo(objeto)) {
 			retorno = valorDefecto;
 		}
 		return retorno;
 	
+	}
+	
+	public <T> boolean objetoEsNulo(T objeto) {
+		return objeto == null;
 	}
 }
