@@ -21,7 +21,7 @@ public final class AplicacionExcepcion extends RuntimeException {
 	private String mensajeUsuario;
 	private Exception excepcionRaiz;
 	private boolean existeExcepcionRaiz;
-	private ExcepcionEnumeracion lugarExpcecion;
+	private ExcepcionEnumeracion lugarExcepcion;
 	
 	
 	
@@ -31,20 +31,32 @@ public final class AplicacionExcepcion extends RuntimeException {
 		setMensajeTecnico(mensajeTecnico);
 		setMensajeUsuario(mensajeUsuario);
 		setExcepcionRaiz(excepcionRaiz);
-		setExcepcionRaiz(excepcionRaiz);
+		setLugarExpcecion(lugarExpcecion);
 		
 		
 			}
 	
-	
-	public static AplicacionExcepcion CREAR(final String mensajeTecnico, final String mensajeUsuario, final Exception excepcionRaiz,
+	public static AplicacionExcepcion CREAR(final String mensajeTecnico, 
+			final String mensajeUsuario, final Exception excepcionRaiz,
 			  final ExcepcionEnumeracion lugarExpcecion) {
 		return new AplicacionExcepcion(mensajeTecnico, mensajeUsuario, excepcionRaiz,  lugarExpcecion);
 		
 	}
 	
-	public static AplicacionExcepcion CREAR(final  String mensajeUsuario) {
-		return new AplicacionExcepcion(null, mensajeUsuario, null,  null);
+	public static AplicacionExcepcion CREAR(final String mensajeUsuario, final Exception ExcepcionRaiz, 
+			final ExcepcionEnumeracion lugarExcepcion) {
+		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, ExcepcionRaiz,lugarExcepcion);
+		
+	}
+	
+	public static AplicacionExcepcion CREAR(final String mensajeUsuario, 
+			final ExcepcionEnumeracion lugarExcepcion) {
+		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, null,lugarExcepcion);
+		
+	}
+	
+	public static AplicacionExcepcion CREAR(final String mensajeUsuario) {
+		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, null, null);
 		
 	}
 	
@@ -58,7 +70,7 @@ public final class AplicacionExcepcion extends RuntimeException {
 	
 	//si llega nula es porque no se la mandaron (no existe)
 	private final void setExcepcionRaiz(final Exception excepcionRaiz) {
-		setExisteExcepcionRaiz(obtenerUtilObjeto().objetoEsNulo(excepcionRaiz));
+		setExisteExcepcionRaiz(!obtenerUtilObjeto().objetoEsNulo(excepcionRaiz));
 		this.excepcionRaiz= UtilObjeto.obtenerUtilObjeto().obtenerValorDefecto(excepcionRaiz, new Exception());
 		
 		
@@ -67,7 +79,7 @@ public final class AplicacionExcepcion extends RuntimeException {
 		this.existeExcepcionRaiz = existeExcepcionRaiz;
 	}
 	private final void setLugarExpcecion(final ExcepcionEnumeracion lugarExpcecion) {
-		this.lugarExpcecion = obtenerUtilObjeto().obtenerValorDefecto(lugarExpcecion, ExcepcionEnumeracion.GENERAL);
+		this.lugarExcepcion = obtenerUtilObjeto().obtenerValorDefecto(lugarExpcecion, ExcepcionEnumeracion.GENERAL);
 	}
 	
 	public final String getMensajeTecnico() {
@@ -83,19 +95,23 @@ public final class AplicacionExcepcion extends RuntimeException {
 		return existeExcepcionRaiz;
 	}
 	public final ExcepcionEnumeracion getLugarExpcecion() {
-		return lugarExpcecion;
+		return lugarExcepcion;
 	}
-	
 	
 	/*public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		try {
-			AplicacionExcepcion.CREAR("Mensaje de error de usuario");
+			throw AplicacionExcepcion.CREAR("mensaje de error tecnico","mensaje de error de usuario",
+					new Exception("Hubo error"),
+					ExcepcionEnumeracion.API);
 		} catch (AplicacionExcepcion excepcion) {
-			System.out.println(excepcion.getMensajeTecnico());
+			System.out.println(excepcion.mensajeTecnico);
+			System.out.println(excepcion.mensajeUsuario);
+			System.out.println(excepcion.getExcepcionRaiz());
+			System.out.println(excepcion.isExisteExcepcionRaiz());
+			System.out.println(excepcion.lugarExcepcion.getNombre());
 		}
-	}
-	*/
+	}*/
+	
 	
 	
 	
