@@ -25,4 +25,7 @@ public abstract class FactoriaDAO {
 	public abstract ITipoMovimientoDAO ObtenerTipoMovimientoDAO();
 	public abstract ITipoCuentaDAO ObtenerTipoCuentaDAO();
 	
+	//tarea: traer toda esto desde java para sql server con jdbc -----> 
+	//agregar dependencia del repo de maven sqlserver JDBC 7.0.0, copiar dependencia se pega en capa de datos, en pom, dependencias
+	//jdbc sqlserver driver for sql (conexion punto punto)
 }
