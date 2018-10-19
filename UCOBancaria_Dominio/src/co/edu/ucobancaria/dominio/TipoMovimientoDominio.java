@@ -1,6 +1,5 @@
 package co.edu.ucobancaria.dominio;
 
-import org.omg.CORBA.portable.ApplicationException;
 
 import co.edu.uco.ucobase_transversal.excepcion.enumeracion.ExcepcionEnumeracion;
 import co.edu.uco.ucobase_transversal.excepcion.excepcion.AplicacionExcepcion;
@@ -72,24 +71,26 @@ public final class TipoMovimientoDominio {
 		return retorno;
 	}*/
 	
-	public static TipoMovimientoDominio CREAR_PARA_ACTUALIZAR(final int codigo, final String nombre, final String signo) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre,signo);
+	public static TipoMovimientoDominio CREAR_PARA_ACTUALIZAR(final int codigo, final String nombre, 
+			final String signo, final OperacionEnum operacion) {
+		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre,signo, operacion );
 		retorno.asegurarIntegridadCodigo();
 		retorno.asegurarIntegridadNombre();
 		retorno.asegurarIntegridadSigno();
 		return retorno;
 	}
 	
-	public static TipoMovimientoDominio CREAR_PARA_CONSULTAR(final int codigo, final String nombre, final String signo) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre,signo);
+	public static TipoMovimientoDominio CREAR_PARA_CONSULTAR(final int codigo, final String nombre,
+			final String signo, final OperacionEnum operacion) {
+		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre,signo, operacion);
 		retorno.asegurarIntegridadCodigo();
 		retorno.asegurarIntegridadNombre();
 		retorno.asegurarIntegridadSigno();
 		return retorno;
 	}
 	
-	public static TipoMovimientoDominio CREAR_PARA_ELIMINAR(final int codigo) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, null, null);
+	public static TipoMovimientoDominio CREAR_PARA_ELIMINAR(final int codigo, final OperacionEnum operacion) {
+		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, null, null, operacion);
 		retorno.asegurarIntegridadCodigo();
 		return retorno;
 	}
@@ -128,7 +129,7 @@ public final class TipoMovimientoDominio {
 		this.operacion = operacion;
 	}
 
-	//validaciones de los atributos
+	//validaciones de la integridad de los atributos
 	private void asegurarIntegridadCodigo() {
 		if(getCodigo()<=0) {
 			String mensaje= "El codigo de un tipo de movimiento debe ser mayor a 0";
@@ -146,7 +147,7 @@ public final class TipoMovimientoDominio {
 			String mensaje= "El nombre de un tipo de movimiento No puede tener más de 250 caracteres";
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
 		}else if (getNombre().trim().matches("^[a-zA-zñÑáÁéÉéÍéÓúÚ]+$")) {
-			String mensaje= "El nombre de un tipo de movimiento No puede tener letras y espacios";
+			String mensaje= "El nombre de un tipo de movimiento solo puede contener letras y espacios";
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
 		}
 		
