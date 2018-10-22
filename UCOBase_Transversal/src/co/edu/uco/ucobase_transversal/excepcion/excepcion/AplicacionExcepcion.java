@@ -36,28 +36,24 @@ public final class AplicacionExcepcion extends RuntimeException {
 		
 			}
 	
-	public static AplicacionExcepcion CREAR(final String mensajeTecnico, 
-			final String mensajeUsuario, final Exception excepcionRaiz,
-			  final ExcepcionEnumeracion lugarExpcecion) {
-		return new AplicacionExcepcion(mensajeTecnico, mensajeUsuario, excepcionRaiz,  lugarExpcecion);
-		
+	public static AplicacionExcepcion CREAR(final String mensajeTecnico, final String mensajeUsuario, final Exception excepcionRaiz, final ExcepcionEnumeracion lugarExcepcion) {
+		return new AplicacionExcepcion(mensajeTecnico, mensajeUsuario, excepcionRaiz, lugarExcepcion);
 	}
-	
-	public static AplicacionExcepcion CREAR(final String mensajeUsuario, final Exception ExcepcionRaiz, 
-			final ExcepcionEnumeracion lugarExcepcion) {
-		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, ExcepcionRaiz,lugarExcepcion);
-		
+
+	public static AplicacionExcepcion CREAR(final String mensajeUsuario, final Exception excepcionRaiz, final ExcepcionEnumeracion lugarExcepcion) {
+		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, excepcionRaiz, lugarExcepcion);
 	}
-	
-	public static AplicacionExcepcion CREAR(final String mensajeUsuario, 
-			final ExcepcionEnumeracion lugarExcepcion) {
-		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, null,lugarExcepcion);
-		
+
+	public static AplicacionExcepcion CREAR(final String mensajeTecnico, final String mensajeUsuario, final ExcepcionEnumeracion lugarExcepcion) {
+		return new AplicacionExcepcion(mensajeTecnico, mensajeUsuario, null, lugarExcepcion);
 	}
-	
+
+	public static AplicacionExcepcion CREAR(final String mensajeUsuario, final ExcepcionEnumeracion lugarExcepcion) {
+		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, null, lugarExcepcion);
+	}
+
 	public static AplicacionExcepcion CREAR(final String mensajeUsuario) {
 		return new AplicacionExcepcion(mensajeUsuario, mensajeUsuario, null, null);
-		
 	}
 	
 	

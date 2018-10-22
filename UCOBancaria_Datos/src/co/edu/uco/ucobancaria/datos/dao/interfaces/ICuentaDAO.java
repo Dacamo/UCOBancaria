@@ -4,7 +4,7 @@ import java.util.List;
 
 import co.edu.ucobancaria.dominio.CuentaDominio;
 
-public interface ICuentaDAOs {
+public interface ICuentaDAO {
 	void crear(CuentaDominio cuenta);
 	void actualizar(CuentaDominio cuenta);
 	void eliminar(CuentaDominio cuenta);
