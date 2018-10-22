@@ -60,67 +60,34 @@ public final class TipoMovimientoDominio {
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
 			
 		}
-		
 		return retorno;
 	}
 	
-	/*public static TipoMovimientoDominio CREAR_PARA_CREAR(final int codigo, final String nombre, final String signo) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(0, nombre,signo);
-		retorno.asegurarIntegridadNombre();
-		retorno.asegurarIntegridadSigno();
-		return retorno;
-	}*/
-	
-	public static TipoMovimientoDominio CREAR_PARA_ACTUALIZAR(final int codigo, final String nombre, 
-			final String signo, final OperacionEnum operacion) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre,signo, operacion );
-		retorno.asegurarIntegridadCodigo();
-		retorno.asegurarIntegridadNombre();
-		retorno.asegurarIntegridadSigno();
-		return retorno;
-	}
-	
-	public static TipoMovimientoDominio CREAR_PARA_CONSULTAR(final int codigo, final String nombre,
-			final String signo, final OperacionEnum operacion) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre,signo, operacion);
-		retorno.asegurarIntegridadCodigo();
-		retorno.asegurarIntegridadNombre();
-		retorno.asegurarIntegridadSigno();
-		return retorno;
-	}
-	
-	public static TipoMovimientoDominio CREAR_PARA_ELIMINAR(final int codigo, final OperacionEnum operacion) {
-		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, null, null, operacion);
-		retorno.asegurarIntegridadCodigo();
-		return retorno;
-	}
-	
-
-	public OperacionEnum getOperacion() {
+	public final OperacionEnum getOperacion() {
 		return operacion;
 	}
 
-	public int getCodigo() {
+	public final int getCodigo() {
 		return codigo;
 	}
 
-	public String getNombre() {
+	public final String getNombre() {
 		return nombre;
 	}
 
-	public String getSigno() {
+	public final String getSigno() {
 		return signo;
 	}
 
-	private void setCodigo(final int codigo) {
+	private  final void setCodigo(final int codigo) {
 		this.codigo = codigo;
 	}
 
-	private void setNombre(final String nombre) {
+	private final void setNombre(final String nombre) {
 		this.nombre = nombre;
 	}
 
-	private void setSigno(final String signo) {
+	private final void setSigno(final String signo) {
 		this.signo = signo;
 	}
 	
@@ -151,7 +118,6 @@ public final class TipoMovimientoDominio {
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
 		}
 		
-		
 	}
 	
 	private void asegurarIntegridadSigno() {
@@ -170,7 +136,5 @@ public final class TipoMovimientoDominio {
 		}
 		
 	}
-	
-
 
 }

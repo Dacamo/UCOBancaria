@@ -27,5 +27,9 @@ public final class UtilTexto {
 		
 	}
 	
+	public final boolean cadenaEsVaciaONula(final String cadena) {
+		return aplicarTrim(cadena).intern() == "" ;
+	}
+	
 	
 }
