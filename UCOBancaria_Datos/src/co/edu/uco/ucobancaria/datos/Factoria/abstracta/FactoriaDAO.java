@@ -8,6 +8,8 @@ import co.edu.uco.ucobancaria.datos.dao.interfaces.ITipoMovimientoDAO;
 
 public abstract class FactoriaDAO {
 	
+	
+	
 	protected abstract void abrirConexion();
 	
 	protected abstract void iniciarTransaccion();

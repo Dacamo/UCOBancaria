@@ -37,6 +37,7 @@ public class SQLServerFactoriaDAO extends FactoriaDAO{
 		try {
 			final String cadenaConexion = "jdbc:sqlserver://prueba-farid.database.windows.net:1433;database=UCOBancaria;user=ucobancaria_dml;password=uc0b4nc4r14.2018;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			//es punto a punto, no se debera hacer nunca
 			conexion = DriverManager.getConnection(cadenaConexion);
 		} catch (final SQLException excepcion) {
 			final String mensajeUsuario = "Se ha presentado un problema tratando de abrir una conexión con la fuente de información";
