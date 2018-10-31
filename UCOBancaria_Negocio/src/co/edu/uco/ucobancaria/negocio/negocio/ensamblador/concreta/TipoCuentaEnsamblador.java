@@ -1,8 +1,8 @@
-package co.edu.ucobancaria.negocio.negocio.ensamblador.concreta;
+package co.edu.uco.ucobancaria.negocio.negocio.ensamblador.concreta;
 
 import co.edu.ucobancaria.dominio.TipoCuentaDominio;
 import co.edu.ucobancaria.dto.TipoCuentaDTO;
-import co.edu.ucobancaria.negocio.negocio.ensamblador.IEnsamblador;
+import co.edu.uco.ucobancaria.negocio.negocio.ensamblador.IEnsamblador;
 
 import static co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto.obtenerUtilObjeto;
 

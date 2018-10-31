@@ -1,4 +1,4 @@
-package co.edu.ucobancaria.negocio.negocio.ensamblador;
+package co.edu.uco.ucobancaria.negocio.negocio.ensamblador;
 
 import java.util.List;
 

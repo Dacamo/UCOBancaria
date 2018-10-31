@@ -5,4 +5,4 @@
  * @author usuario.edc
  *
  */
-package co.edu.ucobancaria.negocio;
+package co.edu.uco.ucobancaria.negocio;
