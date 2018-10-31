@@ -1,16 +1,20 @@
-package co.edu.ucobancaria.dominio;
+package  co.edu.ucobancaria.dominio;
 
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
 
+import co.edu.uco.ucobase.utilitarios.cadenas.enumeracion.ComodinTextoEnum;
+import co.edu.uco.ucobase.utilitarios.cadenas.enumeracion.ExpresionRegularEnum;
 import co.edu.uco.ucobase.utilitarios.dominio.enumeracion.OperacionEnum;
 import co.edu.uco.ucobase.utilitarios.excepcion.enumeracion.ExcepcionEnumeracion;
 import co.edu.uco.ucobase.utilitarios.excepcion.excepcion.AplicacionExcepcion;
 
 public final class TipoMovimientoDominio {
+
 	private int codigo;
 	private String nombre;
 	private String signo;
 	private OperacionEnum operacion;
-	
+
 	private TipoMovimientoDominio(final int codigo, final String nombre, final String signo, final OperacionEnum operacion) {
 		super();
 		setCodigo(codigo);
@@ -18,53 +22,45 @@ public final class TipoMovimientoDominio {
 		setSigno(signo);
 		setOperacion(operacion);
 	}
-	
-	public static TipoMovimientoDominio CREAR(final int codigo, final String nombre, final String signo, final OperacionEnum operacion ) {
+
+	public final static TipoMovimientoDominio CREAR(final int codigo, final String nombre, final String signo, final OperacionEnum operacion) {
+
 		final TipoMovimientoDominio retorno = new TipoMovimientoDominio(codigo, nombre, signo, operacion);
-		
+
 		switch (retorno.getOperacion()) {
 		case CREAR:
 			retorno.asegurarIntegridadNombre();
 			retorno.asegurarIntegridadSigno();
 			break;
 		case ACTUALIZAR:
-			
-			break;	
-		case CONSULTAR:
-			if(retorno.getCodigo()>0) {
-				retorno.asegurarIntegridadCodigo();
-			}
-			if(retorno.getNombre() != null && retorno.getNombre().trim().intern() != "") {
-				retorno.asegurarIntegridadNombre();
-			}
-			
-			if(retorno.getSigno()!= null && retorno.getSigno().trim().intern() != "") {
-				retorno.asegurarIntegridadSigno();
-			}
-			break;
-		case ELIMINAR:
-			retorno.asegurarIntegridadCodigo();
-			
-			break;
 		case POBLAR:
 			retorno.asegurarIntegridadCodigo();
 			retorno.asegurarIntegridadNombre();
 			retorno.asegurarIntegridadSigno();
-			break;	
-			
+			break;
 		case DEPENDENCIA:
+		case ELIMINAR:
 			retorno.asegurarIntegridadCodigo();
 			break;
+		case CONSULTAR:
+			if (retorno.getCodigo() > 0) {
+				retorno.asegurarIntegridadCodigo();
+			}
+
+			if (!obtenerUtilTexto().cadenaEsVaciaONula(retorno.getNombre())) {
+				retorno.asegurarIntegridadNombre();
+			}
+
+			if (!obtenerUtilTexto().cadenaEsVaciaONula(retorno.getSigno())) {
+				retorno.asegurarIntegridadSigno();
+			}
+			break;
 		default:
-			String mensaje ="el objeto tipo movimiento no se puede crear, debido a que la operacion a validar su integridad no existe ";
+			String mensaje = "El objeto Tipo Movimiento no se puede crear, debido a que la operaciï¿½n para validar su integridad no existe.";
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-			
 		}
+
 		return retorno;
-	}
-	
-	public final OperacionEnum getOperacion() {
-		return operacion;
 	}
 
 	public final int getCodigo() {
@@ -79,62 +75,53 @@ public final class TipoMovimientoDominio {
 		return signo;
 	}
 
-	private  final void setCodigo(final int codigo) {
+	public final OperacionEnum getOperacion() {
+		return operacion;
+	}
+
+	private final void setCodigo(final int codigo) {
 		this.codigo = codigo;
 	}
 
 	private final void setNombre(final String nombre) {
-		this.nombre = nombre;
+		this.nombre = obtenerUtilTexto().aplicarTrim(nombre);
 	}
 
 	private final void setSigno(final String signo) {
-		this.signo = signo;
+		this.signo = obtenerUtilTexto().aplicarTrim(signo);
 	}
-	
-	
+
 	private final void setOperacion(final OperacionEnum operacion) {
-		this.operacion = operacion;
+		this.operacion = OperacionEnum.obtenerValorDefecto(operacion);
 	}
 
-	//validaciones de la integridad de los atributos
 	private void asegurarIntegridadCodigo() {
-		if(getCodigo()<=0) {
-			String mensaje= "El codigo de un tipo de movimiento debe ser mayor a 0";
+		if (getCodigo() <= 0) {
+			String mensaje = "El cï¿½digo de un tipo de movimiento debe ser mayor a cero.";
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
 		}
-	}
-	private void asegurarIntegridadNombre() {
-		if(getNombre()==null) {
-			String mensaje= "El nombre de un tipo de movimiento No puede ser nulo";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}else if(getNombre().trim().intern()=="") {
-			String mensaje= "El nombre de un tipo de movimiento No puede estar vacio";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}else if(getNombre().trim().length()>250) {
-			String mensaje= "El nombre de un tipo de movimiento No puede tener más de 250 caracteres";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}else if (getNombre().trim().matches("^[a-zA-zñÑáÁéÉéÍéÓúÚ]+$")) {
-			String mensaje= "El nombre de un tipo de movimiento solo puede contener letras y espacios";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}
-		
-	}
-	
-	private void asegurarIntegridadSigno() {
-		if(getSigno()==null) {
-			String mensaje= "El signo de un tipo de movimiento No puede ser nulo";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}else if(getSigno().trim().intern()=="") {
-			String mensaje= "El signo de un tipo de movimiento No puede estar vacio";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}else if (getNombre().trim().intern() != "+" || getSigno().trim().intern() != "-" ) {
-			String mensaje= "El signo de un tipo de movimiento solo puede tener (+) o (-)";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}else if (getNombre().trim().matches("^[+-]+$")) {
-			String mensaje= "El signo de un tipo de movimiento solo puede tener (+) o (-)";
-			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
-		}
-		
 	}
 
+	private void asegurarIntegridadNombre() {
+		if (obtenerUtilTexto().cadenaEsVaciaONula(getNombre())) {
+			String mensaje = "El nombre de un tipo de movimiento no puede estar vacï¿½o.";
+			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
+		} else if (getNombre().trim().length() > 250) {
+			String mensaje = "El nombre de un tipo de movimiento no tener mï¿½s de 250 caracteres.";
+			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
+		} else if (!ExpresionRegularEnum.SOLO_TEXTO.cumplePatron(getNombre())) {
+			String mensaje = "El nombre de un tipo de movimiento sï¿½lo puede contener letras y espacios.";
+			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
+		}
+	}
+
+	private void asegurarIntegridadSigno() {
+		if (obtenerUtilTexto().cadenaEsVaciaONula(getSigno())) {
+			String mensaje = "El signo de un tipo de movimiento no puede estar vacï¿½o.";
+			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
+		} else if (getNombre().trim().intern() != ComodinTextoEnum.SIGNO_SUMA.getComodin() || getNombre().trim().intern() != ComodinTextoEnum.SIGNO_RESTA.getComodin()) {
+			String mensaje = "El signo de un tipo de movimiento sï¿½lo puede ser mï¿½s (+) o menos (-).";
+			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
+		}
+	}
 }
