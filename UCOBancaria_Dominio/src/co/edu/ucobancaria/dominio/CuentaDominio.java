@@ -1,10 +1,10 @@
 package co.edu.ucobancaria.dominio;
 
-import static co.edu.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
 
-import co.edu.uco.ucobase_transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase_transversal.excepcion.excepcion.AplicacionExcepcion;
-import co.edu.ucobase.transversal.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
+import co.edu.uco.ucobase.transversal.dominio.enumeracion.OperacionEnum;
 
 public final class CuentaDominio {
 	

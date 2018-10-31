@@ -1,13 +1,13 @@
-package co.edu.uco.ucobase_transversal.excepcion.excepcion;
+package co.edu.uco.ucobase.transversal.excepcion.excepcion;
 
-import co.edu.uco.ucobase_transversal.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
 //import co.edu.ucobase.transversal.cadenas.UtilTexto;
-import co.edu.ucobase.transversal.objeto.UtilObjeto;
+import co.edu.uco.ucobase.transversal.objeto.UtilObjeto;
 
-import static co.edu.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
-import static co.edu.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
+import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
 
-import java.nio.charset.MalformedInputException;
+
 
 
 public final class AplicacionExcepcion extends RuntimeException {

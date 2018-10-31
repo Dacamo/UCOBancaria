@@ -1,4 +1,4 @@
-package co.edu.ucobase.transversal.objeto;
+package co.edu.uco.ucobase.transversal.objeto;
 
 public final class UtilObjeto {
 

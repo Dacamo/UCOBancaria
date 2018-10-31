@@ -1,4 +1,4 @@
-package co.edu.uco.ucobancaria.datos.Factoria.abstracta.concreta;
+package co.edu.uco.ucobancaria.datos.Factoria.concreta.sqlserver;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,10 +10,10 @@ import co.edu.uco.ucobancaria.datos.dao.interfaces.ICuentaDAO;
 import co.edu.uco.ucobancaria.datos.dao.interfaces.IMovimientoDAO;
 import co.edu.uco.ucobancaria.datos.dao.interfaces.ITipoCuentaDAO;
 import co.edu.uco.ucobancaria.datos.dao.interfaces.ITipoMovimientoDAO;
-import co.edu.uco.ucobase_transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase_transversal.excepcion.excepcion.AplicacionExcepcion;
+import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
 
-import static co.edu.ucobase.transversal.sql.UtilSQL.obtenerUtilSQL;
+import static co.edu.uco.ucobase.transversal.sql.UtilSQL.obtenerUtilSQL;
 
 public class SQLServerFactoriaDAO extends FactoriaDAO{
 

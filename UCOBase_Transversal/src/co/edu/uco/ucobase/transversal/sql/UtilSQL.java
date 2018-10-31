@@ -1,11 +1,11 @@
-package co.edu.ucobase.transversal.sql;
-import static co.edu.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
+package co.edu.uco.ucobase.transversal.sql;
+import static co.edu.uco.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import co.edu.uco.ucobase_transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase_transversal.excepcion.excepcion.AplicacionExcepcion;
+import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
 
 public class UtilSQL {
 	private static final UtilSQL INSTANCIA = new UtilSQL();

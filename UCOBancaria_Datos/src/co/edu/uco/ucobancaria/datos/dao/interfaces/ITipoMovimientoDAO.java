@@ -2,7 +2,7 @@ package co.edu.uco.ucobancaria.datos.dao.interfaces;
 
 import java.util.List;
 
-import co.edu.ucobancaria.dominio.TipoCuentaDominio;
+
 import co.edu.ucobancaria.dominio.TipoMovimientoDominio;
 
 public interface ITipoMovimientoDAO {

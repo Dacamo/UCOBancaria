@@ -1,8 +1,8 @@
 package co.edu.ucobancaria.dominio;
 
-import co.edu.uco.ucobase_transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase_transversal.excepcion.excepcion.AplicacionExcepcion;
-import co.edu.ucobase.transversal.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
+import co.edu.uco.ucobase.transversal.dominio.enumeracion.OperacionEnum;
 
 public final class TipoCuentaDominio {
 	
