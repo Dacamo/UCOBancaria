@@ -1,5 +1,5 @@
 package co.edu.ucobancaria.dto;
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
 
 /*
  * Objeto de transferencia de datos que representa 

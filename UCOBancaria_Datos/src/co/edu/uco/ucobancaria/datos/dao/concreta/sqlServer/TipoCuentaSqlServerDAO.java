@@ -1,10 +1,8 @@
 package co.edu.uco.ucobancaria.datos.dao.concreta.sqlServer;
 
-import static co.edu.uco.ucobase.transversal.sql.UtilSQL.obtenerUtilSQL;
-import static co.edu.uco.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
-
-
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto.obtenerUtilObjeto;
+import static co.edu.uco.ucobase.utilitarios.sql.UtilSQL.obtenerUtilSQL;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.uco.ucobancaria.datos.dao.interfaces.ITipoCuentaDAO;
-import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
+import co.edu.uco.ucobase.utilitarios.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.utilitarios.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.utilitarios.excepcion.excepcion.AplicacionExcepcion;
 import co.edu.ucobancaria.dominio.TipoCuentaDominio;
-import co.edu.uco.ucobase.transversal.dominio.enumeracion.OperacionEnum;
 
 
 

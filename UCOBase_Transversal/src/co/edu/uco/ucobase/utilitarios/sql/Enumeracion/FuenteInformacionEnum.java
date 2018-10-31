@@ -1,4 +1,4 @@
-package co.edu.uco.ucobase.transversal.sql.Enumeracion;
+package co.edu.uco.ucobase.utilitarios.sql.Enumeracion;
 
 public enum FuenteInformacionEnum {
 	

@@ -2,8 +2,8 @@ package co.edu.ucobancaria.dto;
 
 import java.util.Date;
 
-import static co.edu.uco.ucobase.transversal.fecha.UtilFecha.obtenerUtilFecha;
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.fecha.UtilFecha.obtenerUtilFecha;
 
 public final class MovimientoDTO {
 

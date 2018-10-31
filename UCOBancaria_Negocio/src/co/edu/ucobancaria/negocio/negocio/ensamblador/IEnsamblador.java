@@ -2,7 +2,7 @@ package co.edu.ucobancaria.negocio.negocio.ensamblador;
 
 import java.util.List;
 
-import co.edu.uco.ucobase.transversal.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.utilitarios.dominio.enumeracion.OperacionEnum;
 
 public interface IEnsamblador<Dominio, DTO> {
 

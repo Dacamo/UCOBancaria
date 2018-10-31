@@ -1,6 +1,6 @@
-package co.edu.uco.ucobase.transversal.cadenas;
+package co.edu.uco.ucobase.utilitarios.cadenas;
 
-import static co.edu.uco.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
+import static co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto.obtenerUtilObjeto;
 
 public final class UtilTexto {
 	

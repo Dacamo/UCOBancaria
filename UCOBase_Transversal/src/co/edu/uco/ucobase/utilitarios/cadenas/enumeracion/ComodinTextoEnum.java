@@ -1,4 +1,4 @@
-package co.edu.uco.ucobase.transversal.cadenas.enumeracion;
+package co.edu.uco.ucobase.utilitarios.cadenas.enumeracion;
 
 public enum ComodinTextoEnum {
 	

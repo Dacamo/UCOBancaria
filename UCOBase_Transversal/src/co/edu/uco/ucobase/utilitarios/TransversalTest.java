@@ -1,11 +1,11 @@
-package co.edu.uco.ucobase.transversal;
+package co.edu.uco.ucobase.utilitarios;
 import org.junit.Assert;
 import org.junit.Test;
 
-import co.edu.uco.ucobase.transversal.objeto.UtilObjeto;
+import co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto;
 
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
-import static co.edu.uco.ucobase.transversal.fecha.UtilFecha.obtenerUtilFecha;
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.fecha.UtilFecha.obtenerUtilFecha;
 
 
 

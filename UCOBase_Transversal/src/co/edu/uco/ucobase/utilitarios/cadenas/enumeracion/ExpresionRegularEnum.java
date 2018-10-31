@@ -1,6 +1,6 @@
-package co.edu.uco.ucobase.transversal.cadenas.enumeracion;
+package co.edu.uco.ucobase.utilitarios.cadenas.enumeracion;
 
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
 
 public enum ExpresionRegularEnum {
 	

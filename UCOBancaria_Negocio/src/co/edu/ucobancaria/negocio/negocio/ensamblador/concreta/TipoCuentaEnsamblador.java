@@ -3,15 +3,15 @@ package co.edu.ucobancaria.negocio.negocio.ensamblador.concreta;
 import co.edu.ucobancaria.dominio.TipoCuentaDominio;
 import co.edu.ucobancaria.dto.TipoCuentaDTO;
 import co.edu.ucobancaria.negocio.negocio.ensamblador.IEnsamblador;
-import co.edu.uco.ucobase.transversal.dominio.enumeracion.OperacionEnum;
 
-import static co.edu.uco.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
+import static co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto.obtenerUtilObjeto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
+import co.edu.uco.ucobase.utilitarios.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.utilitarios.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.utilitarios.excepcion.excepcion.AplicacionExcepcion;
 
 public class TipoCuentaEnsamblador implements IEnsamblador<TipoCuentaDominio, TipoCuentaDTO>{
 	private static final IEnsamblador<TipoCuentaDominio, TipoCuentaDTO> INSTANCIA = new TipoCuentaEnsamblador();

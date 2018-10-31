@@ -1,4 +1,4 @@
-package co.edu.uco.ucobase.transversal.excepcion.enumeracion;
+package co.edu.uco.ucobase.utilitarios.excepcion.enumeracion;
 
 public  enum ExcepcionEnumeracion {
 	

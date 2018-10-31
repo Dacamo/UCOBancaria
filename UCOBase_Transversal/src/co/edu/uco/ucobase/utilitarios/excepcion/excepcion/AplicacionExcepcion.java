@@ -1,11 +1,11 @@
-package co.edu.uco.ucobase.transversal.excepcion.excepcion;
+package co.edu.uco.ucobase.utilitarios.excepcion.excepcion;
 
-import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-//import co.edu.ucobase.transversal.cadenas.UtilTexto;
-import co.edu.uco.ucobase.transversal.objeto.UtilObjeto;
+import co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto;
 
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
-import static co.edu.uco.ucobase.transversal.objeto.UtilObjeto.obtenerUtilObjeto;
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto.obtenerUtilObjeto;
+
+import co.edu.uco.ucobase.utilitarios.excepcion.enumeracion.ExcepcionEnumeracion;
 
 
 

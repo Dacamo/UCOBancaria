@@ -1,9 +1,9 @@
 package co.edu.ucobancaria.dominio;
-import static co.edu.uco.ucobase.transversal.cadenas.UtilTexto.obtenerUtilTexto;
+import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
 
-import co.edu.uco.ucobase.transversal.excepcion.enumeracion.ExcepcionEnumeracion;
-import co.edu.uco.ucobase.transversal.excepcion.excepcion.AplicacionExcepcion;
-import co.edu.uco.ucobase.transversal.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.utilitarios.dominio.enumeracion.OperacionEnum;
+import co.edu.uco.ucobase.utilitarios.excepcion.enumeracion.ExcepcionEnumeracion;
+import co.edu.uco.ucobase.utilitarios.excepcion.excepcion.AplicacionExcepcion;
 
 public final class ClienteDominio {
 	private int codigo;
