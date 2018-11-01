@@ -5,7 +5,7 @@ import org.junit.Test;
 import co.edu.uco.ucobase.utilitarios.objeto.UtilObjeto;
 
 import static co.edu.uco.ucobase.utilitarios.cadenas.UtilTexto.obtenerUtilTexto;
-import static co.edu.uco.ucobase.utilitarios.fecha.UtilFecha.obtenerUtilFecha;
+
 
 
 

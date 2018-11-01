@@ -25,6 +25,7 @@ public abstract class FactoriaDAO {
 	public abstract ICuentaDAO ObtenerCuentaDAO();
 	public abstract IMovimientoDAO ObtenerMovimientoDAO();
 	public abstract ITipoMovimientoDAO ObtenerTipoMovimientoDAO();
+	
 	public abstract ITipoCuentaDAO ObtenerTipoCuentaDAO();
 	
 	

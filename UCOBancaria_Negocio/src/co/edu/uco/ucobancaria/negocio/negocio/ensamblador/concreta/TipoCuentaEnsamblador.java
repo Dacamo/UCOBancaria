@@ -14,6 +14,7 @@ import co.edu.uco.ucobase.utilitarios.excepcion.enumeracion.ExcepcionEnumeracion
 import co.edu.uco.ucobase.utilitarios.excepcion.excepcion.AplicacionExcepcion;
 
 public class TipoCuentaEnsamblador implements IEnsamblador<TipoCuentaDominio, TipoCuentaDTO>{
+	
 	private static final IEnsamblador<TipoCuentaDominio, TipoCuentaDTO> INSTANCIA = new TipoCuentaEnsamblador();
 
 	private TipoCuentaEnsamblador() {
