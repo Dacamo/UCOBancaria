@@ -40,7 +40,7 @@ public class TipoCuentaNegocio implements ITipoCuentaNegocio {
 		final TipoCuentaDominio tipoCuentaDominio = TipoCuentaEnsamblador.obtenerTipoCuentaEnsamblador().ensamblarDominio(tipoCuenta, OperacionEnum.CREAR);
 
 		// 2. Crear el tipo de cuenta en la fuente de información
-		factoria.ObtenerTipoCuentaDAO().crear(tipoCuentaDominio);
+		factoria.obtenerTipoCuentaDAO().crear(tipoCuentaDominio);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class TipoCuentaNegocio implements ITipoCuentaNegocio {
 		final TipoCuentaDominio tipoCuentaDominio = TipoCuentaEnsamblador.obtenerTipoCuentaEnsamblador().ensamblarDominio(tipoCuenta, OperacionEnum.ACTUALIZAR);
 
 		// 2. Crear el tipo de cuenta en la fuente de información
-		factoria.ObtenerTipoCuentaDAO().actualizar(tipoCuentaDominio);
+		factoria.obtenerTipoCuentaDAO().actualizar(tipoCuentaDominio);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class TipoCuentaNegocio implements ITipoCuentaNegocio {
 		final TipoCuentaDominio tipoCuentaDominio = TipoCuentaEnsamblador.obtenerTipoCuentaEnsamblador().ensamblarDominio(tipoCuenta, OperacionEnum.ELIMINAR);
 
 		// 2. Crear el tipo de cuenta en la fuente de información
-		factoria.ObtenerTipoCuentaDAO().eliminar(tipoCuentaDominio);
+		factoria.obtenerTipoCuentaDAO().eliminar(tipoCuentaDominio);
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class TipoCuentaNegocio implements ITipoCuentaNegocio {
 		final TipoCuentaDominio tipoCuentaDominio = TipoCuentaEnsamblador.obtenerTipoCuentaEnsamblador().ensamblarDominio(tipoCuenta, OperacionEnum.CONSULTAR);
 
 		// 2. Crear el tipo de cuenta en la fuente de información
-		final List<TipoCuentaDominio> listaDominios = factoria.ObtenerTipoCuentaDAO().consultar(tipoCuentaDominio);
+		final List<TipoCuentaDominio> listaDominios = factoria.obtenerTipoCuentaDAO().consultar(tipoCuentaDominio);
 
 		// 3. Ensamblar lista de retorno
 		return TipoCuentaEnsamblador.obtenerTipoCuentaEnsamblador().enmsablarListaDTO(listaDominios);

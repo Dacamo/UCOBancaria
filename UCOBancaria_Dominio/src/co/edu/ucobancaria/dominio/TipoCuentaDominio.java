@@ -87,7 +87,7 @@ public final class TipoCuentaDominio {
 
 	private void asegurarIntegridadNombre() {
 		if (obtenerUtilTexto().cadenaEsVaciaONula(getNombre())) {
-			String mensaje = "El nombre de un tipo de cuenta no puede estar vac�o.";
+			String mensaje = "El nombre de un tipo de cuenta no puede estar vacioo.";
 			throw AplicacionExcepcion.CREAR(mensaje, ExcepcionEnumeracion.DOMINIO);
 		} else if (getNombre().trim().length() > 250) {
 			String mensaje = "El nombre de un tipo de cuenta no tener m�s de 250 caracteres.";

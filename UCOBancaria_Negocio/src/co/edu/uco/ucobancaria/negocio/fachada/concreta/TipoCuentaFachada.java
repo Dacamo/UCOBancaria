@@ -14,41 +14,44 @@ import co.edu.ucobancaria.dto.TipoCuentaDTO;
 public final class TipoCuentaFachada implements ITipoCuentaFachada {
 
 	@Override
-	public final void crear(TipoCuentaDTO tipoCuenta) {
-		final FactoriaDAO factoria = FactoriaDAO.ObtenerFactoria(FuenteInformacionEnum.SQL_SERVER);
+	public final void crear(final TipoCuentaDTO tipoCuenta) {
+		final FactoriaDAO factoria = FactoriaDAO.obtenerFactoria(FuenteInformacionEnum.SQL_SERVER);
+
 		try {
-			factoria.IniciarTransaccion();
-			final ITipoCuentaNegocio = new TipoCuentaNegocio(factoria);
+			factoria.iniciarTransaccion();
+
+			final ITipoCuentaNegocio negocio = new TipoCuentaNegocio(factoria);
 			negocio.crear(tipoCuenta);
+
+			factoria.confirmarTransaccion();
 		} catch (final AplicacionExcepcion excepcion) {
-			factoria.cancelarTransaccion;
-			throw excepcion;
-		}catch (final Exception exception  )  {
 			factoria.cancelarTransaccion();
-			final String mensajeUsuario ="Se ha presentado un problema tratando de registrar la infomacion del nuevo tipoCuenta";
-			final String mensajeTecnico ="Se ha presentado un problema inesperado tratando de crear el nuevo tipo de cuenta";
-			throw AplicacionExcepcion.CREAR(mensajeUsuario,mensajeUsuario, excepcion, ExcepcionEnumeracion.FACHADA);
-		}finally {
+			throw excepcion;
+		} catch (final Exception excepcion) {
+			factoria.cancelarTransaccion();
+			final String mensajeUsuario = "Se ha presentado un problema tratando de registrar la informacion del nuevo tipo de cuenta";
+			final String mensajeTecnico = "Se ha presentado un problema inesperado tratando de crear el nuevo tipo de cuenta.";
+			throw AplicacionExcepcion.CREAR(mensajeTecnico, mensajeUsuario, excepcion, ExcepcionEnumeracion.FACHADA);
+		} finally {
 			factoria.cerrarConexion();
 		}
-		
 	}
 
 	@Override
 	public void actualizar(TipoCuentaDTO tipoCuenta) {
-		//hacer
-		
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void eliminar(TipoCuentaDTO tipoCuenta) {
-		//hacer
-		
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public List<TipoCuentaDTO> consultar(TipoCuentaDTO tipoCuenta) {
-		//hacer
+		// TODO Auto-generated method stub
 		return null;
 	}
 
